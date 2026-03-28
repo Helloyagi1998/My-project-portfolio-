@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sunday Tech Hub</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #0b1f3a, #122b52);
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        position: sticky;
+        top: 0;
+    }
+
+    nav a {
+        color: gold;
+        text-decoration: none;
+        margin: 0 12px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    header {
+        background-color: gold;
+        color: black;
+        padding: 25px;
+        font-size: 30px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero {
+        padding: 80px 20px 60px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 21px;
+        max-width: 700px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+    button {
+        background-color: gold;
+        color: black;
+        border: none;
+        padding: 14px 24px;
+        font-size: 18px;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 25px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .about, .services-section, .contact-section {
+        background-color: white;
+        color: black;
+        margin: 30px auto;
+        width: 88%;
+        max-width: 900px;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .about h2, .services-section h2, .contact-section h2 {
+        color: #0b1f3a;
+        margin-bottom: 15px;
+    }
+
+    .service-box {
+        background-color: #f7f7f7;
+        margin: 18px 0;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .service-box h3 {
+        color: #0b1f3a;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    input, textarea, .contact-section button {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+    textarea {
+        min-height: 130px;
+        resize: none;
+    }
+
+    .contact-section button {
+        background-color: gold;
+        color: black;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    footer {
+        margin-top: 40px;
+        padding: 25px;
+        font-size: 14px;
+        color: #dddddd;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+
+    .service-box:hover,
+    .about:hover,
+    .contact-section:hover,
+    .brand-section:hover {
+        transform: translateY(-5px);
+        transition: 0.3s;
+   }
+
+    nav a:hover {
+        color: white;
+        transition: 0.3s;
+   }
+
+    .brand-section {
+        background-color: white;
+        color: black;
+        margin: 30px auto;
+        width: 88%;
+        max-width: 900px;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .brand-section img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 15px;
+        border: 5px solid gold;
+    }
+
+    .brand-section h2 {
+        color: #0b1f3a;
+    }
+
+    .projects-section {
+        background-color: white;
+        color: black;
+        margin: 30px auto;
+        width: 88%;
+        max-width: 900px;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .projects-section h2 {
+        color: #0b1f3a;
+    }
+
+    .project-card {
+        background-color: #f7f7f7;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 14px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .project-card h3 {
+        color: #0b1f3a;
+    }
+    .skills-section {
+        background-color: white;
+        color: black;
+        margin: 30px auto;
+        width: 88%;
+        max-width: 900px;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .skills-section h2 {
+        color: #0b1f3a;
+    }
+
+    .skill-box {
+        background: linear-gradient(135deg, #0b1f3a, #1d4ed8);
+        color: white;
+        padding: 18px;
+        margin: 15px 0;
+        border-radius: 14px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .skill-box:hover {
+        transform: translateY(-5px);
+    }
+
+    .cta-section {
+        background: linear-gradient(135deg, #0b1f3a, #1d4ed8);
+        color: white;
+        text-align: center;
+        margin: 30px auto;
+        width: 88%;
+        max-width: 900px;
+        padding: 40px 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+    }
+
+    .cta-section h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .cta-section p {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .cta-button {
+        background-color: gold;
+        color: black;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: scale(1.05);
+    }
+
+    .goal-section {
+        background-color: white;
+        color: black;
+        margin: 30px auto;
+        width: 88%;
+        max-width: 900px;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .goal-section h2 {
+        color: #0b1f3a;
+    }
+
+</style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>Sunday Web Studio</header>
+
+    <section class="hero" id="home">
+        <h1>I Build Websites for the Future 🚀</h1>
+        <p>
+            I am learning web development and building websites that can help businesses grow online.
+        </p>
+        <button onclick="showMessage()">Let's Build Something Great</button>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            My name is Sunday. I am starting my journey in tech and learning how to build modern websites.
+            My goal is to become a skilled web developer and work with real businesses.
+        </p>
+    </section>
+
+    <section class="brand-section">
+        <h2>My Digital Identity</h2>
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500" alt="My Brand Image">
+        <p>
+            This section represents my future brand as a web developer.
+            I am building my skills and preparing to create modern websites for real businesses.
+        </p>
+    </section
+
+    <section class="services-section" id="services">
+        
+        <h2>My Future Projects</h2>
+
+        <section class="projects-section">
+    <h2>My Projects</h2>
+
+    <div class="project-card">
+        <h3>My First Website</h3>
+        <p>I built my first personal website using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Sunday Tech Business Page</h3>
+        <p>I am learning how to build modern landing pages for businesses.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Future Contact Form Project</h3>
+        <p>I created a contact section with interactive JavaScript alert messages.</p>
+    </div>
+    </section>
+
+        <div class="service-box">
+            <h3>Business Websites</h3>
+            <p>I want to build clean websites for small businesses and brands.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Delivery Platforms</h3>
+            <p>I want to create websites for delivery services with tracking and login systems.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Smart Web Tools</h3>
+            <p>I want to build modern websites for businesses and create useful online tools.</p>
+        </div>
+        
+        <section class="skills-section">
+            <h2>My Skills</h2>
+
+            <div class="skill-box">HTML Structure</div>
+            <div class="skill-box">CSS Styling</div>
+            <div class="skill-box">JavaScript Basics</div>
+            <div class="skill-box">Modern Website Design</div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Need a website?</h2>
+            <p>
+                I am learning web development and preparing to build clean, modern websites for businesses and brands.
+            </p>
+            <button class="cta-button" onclick="showHireMessage()">Hire Me</button>
+        </section>
+
+        <section class="goal-section">
+            <h2>My Mission in Tech</h2>
+            <p>
+                My mission is to grow in tech, become a strong web developer, and create modern websites that help businessese succeed online.
+            </p>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: Coming soon</p>
+            <p>Phone: Available on request</p>
+            <p>Location: Abuja, Nigeria</p>
+
+        <form>
+            <input type="text" placeholder="Enter your Name">
+            <input type="email" placeholder="Enter your Email">
+            <textarea placeholder="Type your message here..."></textarea>
+            <button type="button" onclick="sendForm()">Send Message</button>
+    </form>
+</section>
+
+<section class="about">
+    <h2>Why Work With Me</h2>
+    <p>
+        I am passionate about learning web development and building modern websites that help businesses grow.
+        I believe in simple design, useful features, and creating websites that look clean and professional.
+    </p>
+</section>
+
+<footer>
+    © 2026 Sunday | Future Web Developer
+</footer>
+
+<script>
+function sendForm() {
+    alert("Your message has been sent successfully!");
+}
+
+function showHireMessage() {
+    alert("Thanks for checking out my website! More great projects are coming soon.");
+}
+</script>
+
+</body>
+</html>
